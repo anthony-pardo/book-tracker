@@ -1,7 +1,13 @@
-<h1>Welcome to your Bookshelf</h1>
-
 <% if logged_in? %>
-  
-<% end %>
+<h1>Welcome to your Bookshelf, <%=current_user.username%></h1>
+
+<h4>Your Books are:</h4>
+<ul>
+  <%current_user.books.each do |book|%>
+  <li><%=book.title%> by <%=book.author%> which you have a rating of <%=book.rating%></li>
+  <%end%>
+</ul>
 
 <p><a href="/logout">Log Out</a></p>
+<% end %>
+
