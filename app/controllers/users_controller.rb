@@ -26,10 +26,15 @@ class UsersController < ApplicationController
  
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect "/account"
+      redirect "/bookshelf"
     else
       redirect "/failure"
     end
+  end
+
+  get '/bookshelf' do 
+    @user = User.find(session[:user_id])
+    erb :bookshelf
   end
 
 end
