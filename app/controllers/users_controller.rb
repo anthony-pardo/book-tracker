@@ -7,4 +7,8 @@ class UsersController < ApplicationController
     erb :signup
   end
 
+  get '/login' do 
+    erb :login 
+  end
+
 end
