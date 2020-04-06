@@ -1,4 +1,9 @@
+require "./config/environment"
+require "./app/models/user"
+require "./app/models/book"
+
 class UsersController < ApplicationController
+
   get '/' do 
     erb :index
   end
@@ -26,6 +31,7 @@ class UsersController < ApplicationController
  
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
+      binding.pry
       redirect "/bookshelf"
     else
       redirect "/failure"
