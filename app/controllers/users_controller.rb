@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
   get '/' do 
-    "Hello World!"
+    erb :index
+  end
+
+  get '/signup' do 
+    erb :signup
   end
 
 end
