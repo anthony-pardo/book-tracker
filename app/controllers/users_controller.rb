@@ -5,6 +5,7 @@ require "./app/models/book"
 class UsersController < ApplicationController
 
   get '/' do 
+    session[:error] = false
     erb :index
   end
 
@@ -14,10 +15,10 @@ class UsersController < ApplicationController
 
   post "/signup" do
     if User.find_by_username(params[:username])
-      @error = true
+      session[:error] = true
       redirect to('/failure')
     end
-    
+
     user = User.new(username: params[:username], password: params[:password])
     
     if user.username != '' && user.save 
@@ -50,6 +51,10 @@ class UsersController < ApplicationController
   get "/logout" do
     session.clear
     redirect "/"
+  end
+
+  get '/failure' do 
+    erb :failure
   end
 
 end

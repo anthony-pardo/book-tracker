@@ -1,5 +1,6 @@
 <h1>Book Tracker Error</h1>
-<% if @error %> 
+<% if session[:error] == true %> 
 <p>Sorry, that username is taken. Please return to <a href="/">the home page</a> and try again.</p>
-<% end %>
+<% else %>
 <p>It seems there was a problem. Please return to <a href="/">the home page</a> and try again.</p>
+<% end %>
