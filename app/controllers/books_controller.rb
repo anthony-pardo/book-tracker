@@ -18,6 +18,16 @@ class BooksController < ApplicationController
     erb :'/books/show'
   end
   # Update 
+  get '/books/:id/edit' do 
+    @book = Book.find(params[:id])
+    erb :'/books/edit'
+  end
+
+  patch '/books/:id' do   
+    @book = Book.find(params[:id])
+    @book.update(title: params[:title], author: params[:author], rating: params[:rating]))
+    redirect "books/#{@book.id}"
+  end
   # Deletes
 
 end
