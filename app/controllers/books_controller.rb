@@ -7,6 +7,11 @@ class BooksController < ApplicationController
   get '/books/new' do 
     erb :'/books/new'
   end
+
+  post '/books' do 
+    @book = Book.create(title: parmas[:title], author: params[:author], rating: params[:rating])
+    redirect to "books/#{@book.id}"
+  end
   # Read 
   # Update 
   # Deletes
