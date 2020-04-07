@@ -6,6 +6,9 @@
 <ul>
   <%current_user.books.each do |book|%>
   <li><%=book.title%> by <%=book.author%> which you have a rating of <%=book.rating%> 
+    <form action="/books/<%=book.id%>" class="inline">
+      <input type="submit" value="Show Book Details" />
+    </form>
     <form action="/books/<%=book.id%>/edit" class="inline">
       <input type="submit" value="Edit Book" />
     </form>
@@ -19,9 +22,6 @@
 
 <form action="/books/new">
   <input type="submit" value="Add a New Book to your Bookshelf" />
-</form>
-<form action="/books/show">
-  <input type="submit" value="Show Book Details" />
 </form>
 <form action="/logout">
   <input type="submit" value="Log Out" />
