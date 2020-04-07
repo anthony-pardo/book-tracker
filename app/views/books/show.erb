@@ -1,7 +1,7 @@
 <% if logged_in? and @book.user == current_user%>
-<h1>You Created a New Book</h1>
+<h1><%=@book.title%></h1>
 
-<h1><%=@book.title%> by <%=@book.author%> which you have a rating of <%=@book.rating%></h1>
+<h1>By <%=@book.author%> which you have a rating of <%=@book.rating%></h1>
 <% else %>
 <h1>Sorry You can't access this page</h1>
 <% end %>
