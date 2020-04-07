@@ -6,7 +6,10 @@
   <%current_user.books.each do |book|%>
   <li><%=book.title%> by <%=book.author%> which you have a rating of <%=book.rating%> 
   <a href="/books/<%=book.id%>/edit">Edit Book</a> 
-  <a href="/books/<%=book.id%>/edit">Delete Book</a></li>
+  <form action="/recipes/<%= @recipe.id %>" method="post">
+    <input id="hidden" type="hidden" name="_method" value="delete">
+    <button name="delete" value="Delete Recipe"></button>
+  </form></li>
   <%end%>
 </ul>
 
