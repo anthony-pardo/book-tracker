@@ -17,8 +17,14 @@
   <%end%>
 </ul>
 
-<p><a href="/books/new">Add a New Book to your Bookshelf</a></p>
-<p><a href="/books/show">Show Book Details on your Bookshelf</a></p>
-<p><a href="/logout">Log Out</a></p>
+<form action="/books/new">
+  <input type="submit" value="Add a New Book to your Bookshelf" />
+</form>
+<form action="/books/show">
+  <input type="submit" value="Show Book Details" />
+</form>
+<form action="/logout">
+  <input type="submit" value="Log Out" />
+</form>
 <% end %>
 
