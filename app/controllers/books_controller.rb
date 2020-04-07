@@ -13,6 +13,10 @@ class BooksController < ApplicationController
     redirect to "books/#{@book.id}"
   end
   # Read 
+  get '/books/:id' do 
+    @book = Book.find(params[:id])
+    erb :'/books/show'
+  end
   # Update 
   # Deletes
 
