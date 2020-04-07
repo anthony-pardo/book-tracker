@@ -12,11 +12,13 @@ class BooksController < ApplicationController
     @book = Book.create(title: params[:title], author: params[:author], rating: params[:rating], user: current_user)
     redirect to "books/#{@book.id}"
   end
+
   # Read 
   get '/books/:id' do 
     @book = Book.find(params[:id])
     erb :'/books/show'
   end
+
   # Update 
   get '/books/:id/edit' do 
     @book = Book.find(params[:id])
@@ -28,6 +30,12 @@ class BooksController < ApplicationController
     @book.update(title: params[:title], author: params[:author], rating: params[:rating])
     redirect to "books/#{@book.id}"
   end
-  # Deletes
+
+  # Delete
+  delete '/books/:id' do 
+    @book = Book.find(params[:id])
+    @book.destroy
+    redirect to('/bookshelf')
+  end
 
 end
