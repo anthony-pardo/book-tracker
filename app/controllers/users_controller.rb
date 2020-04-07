@@ -13,6 +13,11 @@ class UsersController < ApplicationController
   end
 
   post "/signup" do
+    if User.find_by_username(params[:username])
+      @error = true
+      redirect to('/failure')
+    end
+    
     user = User.new(username: params[:username], password: params[:password])
     
     if user.username != '' && user.save 
