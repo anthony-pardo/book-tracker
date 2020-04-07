@@ -4,17 +4,15 @@
 <h4>Your Books are:</h4>
 <ul>
   <%current_user.books.each do |book|%>
-  <span>
-    <li><%=book.title%> by <%=book.author%> which you have a rating of <%=book.rating%> 
-      <form action="/books/<%=book.id%>/edit">
-        <input type="submit" value="Edit Book" />
-      </form>
-      <form action="/books/<%= book.id %>" method="post">
-        <input id="hidden" type="hidden" name="_method" value="delete">
-        <button name="delete" value="Delete Book">Delete Book</button>
-      </form>
-    </li>
-  </span>
+  <li><%=book.title%> by <%=book.author%> which you have a rating of <%=book.rating%> 
+    <form action="/books/<%=book.id%>/edit">
+      <input type="submit" value="Edit Book" />
+    </form>
+    <form action="/books/<%= book.id %>" method="post">
+      <input id="hidden" type="hidden" name="_method" value="delete">
+      <button name="delete" value="Delete Book">Delete Book</button>
+    </form>
+  </li>
   <%end%>
 </ul>
 
