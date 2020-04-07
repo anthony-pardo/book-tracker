@@ -2,6 +2,14 @@
 <h1><%=@book.title%></h1>
 
 <h1>By <%=@book.author%> which you have a rating of <%=@book.rating%></h1>
+
+<form action="/bookshelf">
+  <input type="submit" value="Go to Your Bookshelf" />
+</form>
+
+<form action="/logout">
+  <input type="submit" value="Log Out" />
+</form>
 <% else %>
 <h1>Sorry You can't access this page</h1>
 <% end %>
