@@ -9,7 +9,7 @@ class BooksController < ApplicationController
   end
 
   post '/books' do 
-    @book = Book.create(title: parmas[:title], author: params[:author], rating: params[:rating])
+    @book = Book.create(title: params[:title], author: params[:author], rating: params[:rating], user: current_user)
     redirect to "books/#{@book.id}"
   end
   # Read 

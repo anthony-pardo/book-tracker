@@ -31,7 +31,6 @@ class UsersController < ApplicationController
  
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-      binding.pry
       redirect "/bookshelf"
     else
       redirect "/failure"
@@ -46,16 +45,6 @@ class UsersController < ApplicationController
   get "/logout" do
     session.clear
     redirect "/"
-  end
-
-  helpers do
-    def logged_in?
-      !!session[:user_id]
-    end
-
-    def current_user
-      User.find(session[:user_id])
-    end
   end
 
 end
