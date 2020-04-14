@@ -21,7 +21,7 @@ And navigate to the ip address listed for the web server in your browser. Follow
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/anthony-pardo/cli_sci_fi.
+Bug reports and pull requests are welcome on GitHub at https://github.com/anthony-pardo/book-tracker.
 
 
 ## License
