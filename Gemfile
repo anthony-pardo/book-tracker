@@ -1,6 +1,7 @@
 source "https://rubygems.org"
 
 # gem "rails"
+gem "activesupport", ">= 5.2.4.3"
 gem 'activerecord', '5.2.3', :require => 'active_record'
 gem 'bcrypt'
 gem 'database_cleaner'
